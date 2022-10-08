@@ -64,8 +64,6 @@ public class CarController : MonoBehaviour
         {
             frontTire.AddTorque(speed * 1 * Time.deltaTime);
         }
-
-        Debug.Log("velocity:" + velocity);
     }
 
 }

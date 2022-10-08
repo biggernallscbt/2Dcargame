@@ -153,8 +153,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.2944564
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -176,9 +176,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000047683716, y: 0.00000047683716}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32000002
+  m_Radius: 4.2
 --- !u!212 &8024795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 350dc8eb08803fd40aefd7190e4e9356, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5f84c7570776b04f9e7ed7e6a2c8338, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -239,8 +239,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8024792}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.92, y: -5, z: 0}
-  m_LocalScale: {x: 9, y: 9, z: 12.942303}
+  m_LocalPosition: {x: 10.1, y: -5.15, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1784082133}
@@ -345,6 +345,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 1784082133}
   offset: {x: 2, y: 0, z: -1}
+  mainCamera: {fileID: 106020407}
+  desiredDuration: 0.5
+  minZ: 2
+  maxZ: 7
 --- !u!1 &160629525
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,8 +379,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.2944564
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -398,9 +402,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00000047683716}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32000002
+  m_Radius: 4.2
 --- !u!212 &160629528
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -442,7 +446,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 350dc8eb08803fd40aefd7190e4e9356, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5f84c7570776b04f9e7ed7e6a2c8338, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -462,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 160629525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.3, y: -5, z: 0}
-  m_LocalScale: {x: 9, y: 9, z: 12.942303}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1784082133}
@@ -2185,7 +2189,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784082127}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 297fc94066043d44a80e2931c668deee, type: 3}
   m_Name: 
@@ -2390,3 +2394,4 @@ MonoBehaviour:
   rpmLimit: 0
   idleRpm: 800
   rb: {fileID: 1784082130}
+  _cameraFollow: {fileID: 106020409}
