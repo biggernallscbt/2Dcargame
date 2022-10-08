@@ -9,14 +9,12 @@ public class CarController : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
     public string drivetrain;
-    
+    private float velocity;
 
     void FixedUpdate()
     {
 
-        float velocity = Mathf.Round(rb.velocity.magnitude * 3.6f);
-
-
+       
         //awd
 
         if (Input.GetKey("d") && drivetrain == "awd")
@@ -64,6 +62,14 @@ public class CarController : MonoBehaviour
         {
             frontTire.AddTorque(speed * 1 * Time.deltaTime);
         }
+    }
+    private void Update()
+    {
+        velocity = (rb.velocity.magnitude * 3.6f);
+
+
+        Debug.Log(velocity);
+
     }
 
 }

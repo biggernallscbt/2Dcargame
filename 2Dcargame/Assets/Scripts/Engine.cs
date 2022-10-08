@@ -14,8 +14,8 @@ public class Engine : MonoBehaviour
 
     void FixedUpdate()
     {
-        KM_H = Mathf.Round(rb.velocity.magnitude * 3.6f);
-        Debug.Log(KM_H + "Km/H");
+        //KM_H = Mathf.Round(rb.velocity.magnitude * 3.6f);
+        //Debug.Log(KM_H + "Km/H");
 
         
     }
