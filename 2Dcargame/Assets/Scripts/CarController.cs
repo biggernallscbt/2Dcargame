@@ -10,6 +10,7 @@ public class CarController : MonoBehaviour
     public float speed;
     public string drivetrain;
     private float velocity;
+    public CameraFollow _cameraFollow;
 
     void FixedUpdate()
     {
@@ -65,11 +66,9 @@ public class CarController : MonoBehaviour
     }
     private void Update()
     {
-        velocity = (rb.velocity.magnitude * 3.6f);
+        velocity = (rb.velocity.magnitude);
 
-
-        Debug.Log(velocity);
-
+        _cameraFollow.zoom(velocity);
     }
 
 }

@@ -10,8 +10,6 @@ public class CameraFollow : MonoBehaviour
     public float desiredDuration = 0.5f;
     private float elapsedTime;
     private float percentageComplete;
-    public float minZ;
-    public float maxZ;
 
 
     void Update()
@@ -22,8 +20,21 @@ public class CameraFollow : MonoBehaviour
         percentageComplete = elapsedTime / desiredDuration;
     }
 
-    public void zoom(float KM_H)
+    public void zoom(float velocity)
     {
-        mainCamera.orthographicSize = Mathf.Clamp(Mathf.Lerp(transform.position.z, 3 + KM_H / 5, percentageComplete), minZ, maxZ);
+        float KM_H = velocity * 3.6f;
+
+        Debug.Log(KM_H);
+
+
+        if (KM_H <= 50) 
+        { 
+            mainCamera.orthographicSize = (3000 + KM_H * KM_H) / 1000;
+        }
+        else
+        {
+            mainCamera.orthographicSize = (Mathf.Sqrt(KM_H) + 2500) / 1000;
+        }
+        
     }
 }
