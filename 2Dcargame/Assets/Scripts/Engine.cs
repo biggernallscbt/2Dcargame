@@ -19,8 +19,4 @@ public class Engine : MonoBehaviour
 
         
     }
-    void Update()
-    {
-        _cameraFollow.zoom(rb.velocity.magnitude);
-    }
 }
