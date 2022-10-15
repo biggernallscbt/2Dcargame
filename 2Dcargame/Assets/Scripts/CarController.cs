@@ -11,6 +11,7 @@ public class CarController : MonoBehaviour
     public string drivetrain;
     private float velocity;
     public CameraFollow _cameraFollow;
+    public Speedometer _speedometer;
 
     void FixedUpdate()
     {
@@ -69,6 +70,8 @@ public class CarController : MonoBehaviour
         velocity = (rb.velocity.magnitude);
 
         _cameraFollow.zoom(velocity);
+
+        _speedometer.GetSpeedRotation(velocity);
     }
 
 }
