@@ -1,39 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Speedometer : MonoBehaviour
 {
     private const float maxSpeedAngle = -20f;
     private const float zeroSpeedAngle = 210f;
-    private Transform needleTransform;
-    private float maxSpeed;
-    public float speed;
+    public Transform needleTransform;
+    public Rigidbody2D car;
+    public TextMeshProUGUI Km_HText;
 
     private void Awake()
     {
         needleTransform = transform.Find("Needle");
-        speed = 0f;
-        maxSpeed = 200f; 
     }
 
     private void Update()
     {
-        speed += 30f * Time.deltaTime;
-        if (speed >= maxSpeed)
-        {
-            speed--;
-        }
+        needleTransform.eulerAngles = new Vector3(0, 0, GetSpeedRotation(car.velocity.magnitude * 3.6f));
 
+        Km_HText.text = ((int)(car.velocity.magnitude * 3.6f)).ToString();
     }
 
     public float GetSpeedRotation(float speed)
     {
         float totalAngleSize = zeroSpeedAngle - maxSpeedAngle;
 
-        float speedNormalized = speed / maxSpeed;
-
-        return zeroSpeedAngle - speedNormalized * totalAngleSize;
+        return zeroSpeedAngle - speed / 200 * totalAngleSize;
     }
 
 
