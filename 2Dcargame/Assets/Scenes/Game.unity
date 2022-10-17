@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8024795}
   - component: {fileID: 8024793}
   - component: {fileID: 8024794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,8 +153,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 1
+  m_UseAutoMass: 0
+  m_Mass: 0.25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 106020407}
   - component: {fileID: 106020406}
   - component: {fileID: 106020409}
+  - component: {fileID: 106020410}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -349,6 +350,39 @@ MonoBehaviour:
   mainCamera: {fileID: 106020407}
   desiredDuration: 0.5
   camFactor: 0
+--- !u!114 &106020410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106020405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &147787628
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +530,7 @@ GameObject:
   - component: {fileID: 160629528}
   - component: {fileID: 160629526}
   - component: {fileID: 160629527}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,8 +548,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 1
+  m_UseAutoMass: 0
+  m_Mass: 0.25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -687,7 +721,7 @@ GameObject:
   - component: {fileID: 501162851}
   - component: {fileID: 501162850}
   - component: {fileID: 501162853}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VolkTe37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +740,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_Mass: 0.25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -753,9 +787,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 849627713
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d1eb49c07833c6c4c9ad4d7bbd9686a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -814,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &750121476
 RectTransform:
   m_ObjectHideFlags: 0
@@ -851,7 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needleTransform: {fileID: 1461904783}
-  car: {fileID: 1784082130}
+  car: {fileID: 1121689378}
   Km_HText: {fileID: 147787630}
 --- !u!1 &977888162
 GameObject:
@@ -1469,6 +1503,14 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 162.5712
       objectReference: {fileID: 0}
+    - target: {fileID: 696597035586872460, guid: e84a79268e9f9da4da8c5bab8d3e14b8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 696597035586872460, guid: e84a79268e9f9da4da8c5bab8d3e14b8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 696597035586872461, guid: e84a79268e9f9da4da8c5bab8d3e14b8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2943,11 +2985,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 696597035586872462, guid: e84a79268e9f9da4da8c5bab8d3e14b8, type: 3}
       propertyPath: m_Points.Array.data[177].x
-      value: 12.423701
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 696597035586872462, guid: e84a79268e9f9da4da8c5bab8d3e14b8, type: 3}
       propertyPath: m_Points.Array.data[177].y
-      value: -248.99998
+      value: -249
       objectReference: {fileID: 0}
     - target: {fileID: 696597035586872462, guid: e84a79268e9f9da4da8c5bab8d3e14b8, type: 3}
       propertyPath: m_Points.Array.data[178].x
@@ -3022,7 +3064,8 @@ GameObject:
   - component: {fileID: 1121689376}
   - component: {fileID: 1121689375}
   - component: {fileID: 1121689381}
-  m_Layer: 0
+  - component: {fileID: 1121689382}
+  m_Layer: 3
   m_Name: R33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3044,10 +3087,10 @@ MonoBehaviour:
   backTire: {fileID: 501162850}
   frontTire: {fileID: 1410639431}
   rb: {fileID: 1121689378}
-  speed: 276
+  speed: 700
   drivetrain: awd
   _cameraFollow: {fileID: 106020409}
-  _speedometer: {fileID: 0}
+  _speedometer: {fileID: 750121477}
 --- !u!235 &1121689376
 WheelJoint2D:
   m_ObjectHideFlags: 0
@@ -3109,10 +3152,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 0
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2c64452cbe229414e98da6e31533c6b1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -3137,7 +3180,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3155,8 +3198,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 849627713
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d93b1b33c183d054782f11741d50058f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3177,7 +3220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121689374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.156, y: 3.736, z: 0}
+  m_LocalPosition: {x: 1.46, y: 3.736, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3196,7 +3239,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3278,6 +3321,26 @@ PolygonCollider2D:
       - {x: 1.4499999, y: -0.82}
       - {x: 1.6999999, y: -0.79999995}
       - {x: 1.7099999, y: -0.78999996}
+--- !u!114 &1121689382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121689374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18c6d58a1465d438731930db908963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rpm: 0
+  rpmLimit: 0
+  idleRpm: 800
+  rb: {fileID: 0}
+  _cameraFollow: {fileID: 0}
+  gear: 0
+  numberOfGears: 5
+  engineStarted: 0
 --- !u!1 &1410639430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,7 +3353,7 @@ GameObject:
   - component: {fileID: 1410639432}
   - component: {fileID: 1410639431}
   - component: {fileID: 1410639434}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VolkTe37 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3309,7 +3372,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_Mass: 0.25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -3356,9 +3419,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 849627713
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d1eb49c07833c6c4c9ad4d7bbd9686a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3401,6 +3464,117 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.37
+--- !u!1 &1450309208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1450309210}
+  - component: {fileID: 1450309209}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1450309209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450309208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.99215686, g: 0.9843137, b: 0.827451, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000414aa432e38ce2c47d252598792fcb32
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_Vertices:
+  - position: {x: 0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0.70710677, g: 0.70710677, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.9985302, y: 0.9985302, z: 0}
+    color: {r: -0.70710677, g: 0.70710677, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.99853003, y: -0.9985304, z: 0}
+    color: {r: -0.70710665, g: -0.7071069, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0.70710665, g: -0.7071069, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  m_Triangles: 030001000800020000000100030002000100050003000800040002000300050004000300070005000800060004000500070006000500010007000800000006000700010000000700
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &1450309210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450309208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.56081665, y: 7.6681013, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461904782
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,13 +3667,13 @@ GameObject:
   - component: {fileID: 1784082134}
   - component: {fileID: 1784082135}
   - component: {fileID: 1784082136}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CivicMk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!235 &1784082128
 WheelJoint2D:
   m_ObjectHideFlags: 0
@@ -3589,7 +3763,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3629,7 +3803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784082127}
   m_LocalRotation: {x: -0, y: -0, z: -0.004245458, w: 0.999991}
-  m_LocalPosition: {x: -2.66, y: 5.52, z: 0}
+  m_LocalPosition: {x: 6.17, y: 4.16, z: 0}
   m_LocalScale: {x: 0.10413298, y: 0.10413298, z: 0.10413298}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3653,8 +3827,8 @@ MonoBehaviour:
   backTire: {fileID: 160629526}
   frontTire: {fileID: 8024793}
   rb: {fileID: 1784082130}
-  speed: 700
-  drivetrain: fwd
+  speed: 500
+  drivetrain: awd
   _cameraFollow: {fileID: 106020409}
   _speedometer: {fileID: 0}
 --- !u!60 &1784082135
@@ -3853,6 +4027,9 @@ MonoBehaviour:
   idleRpm: 800
   rb: {fileID: 1784082130}
   _cameraFollow: {fileID: 106020409}
+  gear: 0
+  numberOfGears: 0
+  engineStarted: 0
 --- !u!1 &2049026800
 GameObject:
   m_ObjectHideFlags: 0
