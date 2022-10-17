@@ -10,7 +10,40 @@ public class Engine : MonoBehaviour
     public Rigidbody2D rb;
     public static float KM_H;
     public CameraFollow _cameraFollow;
+    public int gear;
+    public int numberOfGears;
+    public bool engineStarted;
 
+
+    private void Start()
+    {
+        engineStarted = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("x"))
+        {
+            gear++;
+        }
+
+        if (Input.GetKeyDown("z"))
+        {
+            gear--;
+        }
+
+        gear = Mathf.Clamp(gear, -1, numberOfGears);
+
+        if (Input.GetKeyDown("v"))
+        {
+            engineStarted = true;
+        }
+
+        if (engineStarted)
+        {
+            rpm = idleRpm;
+        }
+    }
 
     void FixedUpdate()
     {
@@ -18,5 +51,9 @@ public class Engine : MonoBehaviour
         //Debug.Log(KM_H + "Km/H");
 
         
+        if (Input.GetKey("d"))
+        {
+            rpm += 50;
+        }
     }
 }
