@@ -31,8 +31,6 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = car.position + offset + translate * camFactor;
 
-        Debug.Log(KM_H);
-
         mainCamera.orthographicSize = camFactor;
 
 

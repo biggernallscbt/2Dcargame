@@ -13,12 +13,10 @@ public class Engine : MonoBehaviour
     public int gear;
     public int numberOfGears;
     public bool engineStarted;
+    public bool done;
 
 
-    private void Start()
-    {
-        engineStarted = false;
-    }
+
 
     private void Update()
     {
@@ -34,14 +32,27 @@ public class Engine : MonoBehaviour
 
         gear = Mathf.Clamp(gear, -1, numberOfGears);
 
-        if (Input.GetKeyDown("v"))
+        if (Input.GetKeyDown("v") && !engineStarted)
         {
             engineStarted = true;
+            done = true;
         }
 
-        if (engineStarted)
+        if (Input.GetKeyDown("v") && engineStarted)
         {
-            rpm = idleRpm;
+            engineStarted = false;
+            done = false;
+        }
+
+        if (done)
+        {
+            done = false;
+            rpm += idleRpm;
+        }
+
+        if (!engineStarted && rpm <= 0)
+        {
+            //rpm -= 50;
         }
     }
 
@@ -51,9 +62,19 @@ public class Engine : MonoBehaviour
         //Debug.Log(KM_H + "Km/H");
 
         
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && engineStarted)
         {
             rpm += 50;
+        }
+
+        if (Input.GetKey("a") && engineStarted)
+        {
+            rpm -= 50;
+        }
+
+        if (Input.GetKey("a") == false || Input.GetKey("d") && engineStarted)
+        {
+            rpm -= 50;
         }
     }
 }
